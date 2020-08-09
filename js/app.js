@@ -21,20 +21,20 @@ Stores.prototype.getRandomCustomerCount = function() {
 };
 
 Stores.prototype.calcCookieHours = function() {
-    //this.dailyHours = dailyHours;
-    //this.customers = function() {
-    // var randomNumber = Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
-    //return randomNumber;
-    //};
-    // this.avDailyCust = function() {
-    for (var i = 0; i < dailyHours.length; i++) {
-        var averCookies = Math.ceil(this.avg * this.getRandomCustomerCount());
-        this.cookieHoursArray.push(averCookies);
-        this.dailyTotal += averCookies;
-    }
+    this.dailyHours = dailyHours;
+    this.customers = function() {
+        var randomNumber = Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
+        return randomNumber;
+    };
+    this.avDailyCust = function() {
+        for (var i = 0; i < dailyHours.length; i++) {
+            var averCookies = Math.ceil(this.avg * this.getRandomCustomerCount());
+            this.cookieHoursArray.push(averCookies);
+            this.dailyTotal += averCookies;
+        }
+    };
+
 };
-
-
 
 
 
