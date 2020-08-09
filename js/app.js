@@ -32,15 +32,17 @@ Stores.prototype.calcCookieHours = function() {
         this.cookieHoursArray.push(averCookies);
         this.dailyTotal += averCookies;
     }
-    //};
 };
 
 
 
 
 
+
+
+
 Stores.prototype.render = function() {
-    for (i = 0; i < this.dailyHours.length; i++) {
+    for (var i = 0; i < this.dailyHours.length; i++) {
         var tableEl = document.createElement('stores');
         var tdElement = document.createElement('td');
         tdElement.textContent = dailyHours[i].cookieHoursArray;
@@ -53,8 +55,7 @@ Stores.prototype.render = function() {
         tdElement.textContent = dailyHours[i].cookieHoursArray;
         tdElement.appendChild(tdElement);
         tableEl.append(tableEl);
-        var parentEl = document.getElementById('stores');
-        parentEl.appendChild(tableEl);
+
     }
 
 };
