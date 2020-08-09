@@ -35,25 +35,34 @@ Stores.prototype.calcCookieHours = function() {
     //};
 };
 
-var thElement = document.createElement('th');
-thElement.textContent = name;
+
+
 
 
 Stores.prototype.render = function() {
-    for (i = 0; i <= dailyHours.length; i++); {
-
-
-        var trElement = document.createElement('tr');
+    for (i = 0; i < this.dailyHours.length; i++) {
+        var tableEl = document.createElement('stores');
         var tdElement = document.createElement('td');
-        tdElement.textContent = dailyHours[i].calCookieHours;
+        tdElement.textContent = dailyHours[i].cookieHoursArray;
+        var tdElement = document.getElementById('seattle');
+        var tdElement = document.getElementById('tokyo');
+        var tdElement = document.getElementById('dubai');
+        var tdElement = document.getElementById('paris');
+        var tdElement = document.getElementById('lima');
+
+        tdElement.textContent = dailyHours[i].cookieHoursArray;
         tdElement.appendChild(tdElement);
-        thElement.appendChild(thElement);
+        tableEl.append(tableEl);
         var parentEl = document.getElementById('stores');
-        parentEl.appendChild(trElement);
-
-
+        parentEl.appendChild(tableEl);
     }
+
 };
+
+
+Stores.prototype.render();
+
+
 
 var seattle = new Stores('seattle', 23, 65, 6.3);
 var tokyo = new Stores('tokyo', 3, 24, 1.2);
