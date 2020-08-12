@@ -40,9 +40,9 @@ Stores.prototype.render = function() {
 
     var trElement = document.createElement('tr');
     var tdElement = document.createElement('td');
+    //var tdMagicSquare = document.createElement('td');
     tdElement.textContent = this.name;
     trElement.appendChild(tdElement);
-
     for (var i = 0; i < this.dailyHours.length; i++) {
         var tdElement = document.createElement('td');
         tdElement.textContent = this.cookieHoursArray[i];
@@ -52,6 +52,8 @@ Stores.prototype.render = function() {
     tdTotal.textContent = this.dailyTotal;
     trElement.appendChild(tdTotal);
     table.appendChild(trElement);
+    //tdMagicSquare.textContent = tdTotal.cities.length;
+    //trElement.appendChild(tdMagicSquare);
 
 };
 
@@ -65,7 +67,7 @@ var lima = new Stores('LIMA', 2, 16, 4.6);
 
 var cities = [seattle, tokyo, dubai, paris, lima];
 
-// create the header output
+
 function makeHeader() {
     var trHeader = document.createElement('tr');
     var tdHeader = document.createElement('td');
@@ -100,28 +102,27 @@ dubai.render();
 paris.render();
 lima.render();
 
-// build the footer
+
 function getTotal() {
     var trTotal = document.createElement('tr');
     var tdSpace = document.createElement('td');
     tdSpace.textContent = 'TOTAL';
     trTotal.appendChild(tdSpace);
-
-
+    var magicSquare = 0;
     for (var i = 0; i < dailyHours.length; i++) {
         var bottomTotal = 0;
-        console.log(cities);
-        //make the for loop go through and grab daily hours and add up hourly totals
         for (var j = 0; j < cities.length; j++) {
             bottomTotal += cities[j].cookieHoursArray[i];
-            console.log('high');
+            magicSquare += cities[j].cookieHoursArray[i];
         }
-
         var tdTotal = document.createElement('td');
         tdTotal.textContent = bottomTotal;
         trTotal.appendChild(tdTotal);
     }
     table.appendChild(trTotal);
+    var tdMagicSquare = document.createElement('td');
+    tdMagicSquare.textContent = magicSquare;
+    trTotal.appendChild(tdMagicSquare);
 
 }
 getTotal();
