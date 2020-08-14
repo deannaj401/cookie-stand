@@ -39,10 +39,9 @@ Stores.prototype.calcCookieHours = function() {
 Stores.prototype.render = function() {
 
     var trElement = document.createElement('tr');
-    var tdElement = document.createElement('td');
-    //var tdMagicSquare = document.createElement('td');
-    tdElement.textContent = this.name;
-    trElement.appendChild(tdElement);
+    var thStoreElement = document.createElement('th');
+    thStoreElement.textContent = this.name;
+    trElement.appendChild(thStoreElement);
     for (var i = 0; i < this.dailyHours.length; i++) {
         var tdElement = document.createElement('td');
         tdElement.textContent = this.cookieHoursArray[i];
@@ -52,8 +51,7 @@ Stores.prototype.render = function() {
     tdTotal.textContent = this.dailyTotal;
     trElement.appendChild(tdTotal);
     table.appendChild(trElement);
-    //tdMagicSquare.textContent = tdTotal.cities.length;
-    //trElement.appendChild(tdMagicSquare);
+
 
 };
 
@@ -81,9 +79,9 @@ function makeHeader() {
         trHeader.appendChild(thHeader);
 
     }
-    var tdEndTotal = document.createElement('td');
-    tdEndTotal.textContent = 'TOTAL';
-    trHeader.appendChild(tdEndTotal);
+    var thEndTotal = document.createElement('th');
+    thEndTotal.textContent = 'TOTAL';
+    trHeader.appendChild(thEndTotal);
 
     table.appendChild(trHeader);
 
@@ -105,9 +103,9 @@ lima.render();
 
 function getTotal() {
     var trTotal = document.createElement('tr');
-    var tdSpace = document.createElement('td');
-    tdSpace.textContent = 'TOTAL';
-    trTotal.appendChild(tdSpace);
+    var thSpace = document.createElement('th');
+    thSpace.textContent = 'TOTAL';
+    trTotal.appendChild(thSpace);
     var magicSquare = 0;
     for (var i = 0; i < dailyHours.length; i++) {
         var bottomTotal = 0;
