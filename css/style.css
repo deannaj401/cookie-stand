@@ -109,22 +109,6 @@ h2 {
     margin-right: auto;
 }
 
-
-/* .columns {
-    background-color: cornsilk;
-    border: 1px solid green;
-    float: left; 
-    width 10%;
-    
-    height: 250px;
-     justify-content: center; 
-    
-    align-items: center;
-    text-align: center;
-    font-family: cursive;
-    font: 20px;
-    color: green; */
-
 div img {
     margin-left: auto;
     margin-right: auto;
@@ -133,11 +117,16 @@ div img {
     float: left;
 }
 
-#intro {
-    height: 600px;
-    font-family: cursive;
-    font: 36px;
-    color: green;
-    text-align: center;
+#addStores {
+    border: "3px" solid green;
+    padding: "20px";
+}
+
+input {
+    display: block;
+    margin-bottom: 25px;
+}
+
+.newForm {
     float: left;
 }
