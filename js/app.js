@@ -7,24 +7,18 @@ var dailyHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2p
 var table = document.getElementById('stores');
 
 
-var cities = [seattle, tokyo, dubai, paris, lima, added];
+var cities = [seattle, tokyo, dubai, paris, lima];
 
 function Stores(name, min, max, avg) {
     this.name = name;
     this.min = min;
     this.max = max;
     this.avg = avg;
-    cities.push(this);
     this.cookieHoursArray = [];
     this.dailyTotal = 0;
+    cities.push(this);
 
 }
-
-
-
-
-
-
 
 Stores.prototype.getRandomCustomerCount = function() {
     var randomNumber = Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
@@ -71,29 +65,27 @@ var tokyo = new Stores('TOKYO', 3, 24, 1.2);
 var dubai = new Stores('DUBAI', 11, 38, 3.7);
 var paris = new Stores('PARIS', 20, 38, 2.3);
 var lima = new Stores('LIMA', 2, 16, 4.6);
-var added = new Stores(name, min, max, avg);
 
-var cities = [seattle, tokyo, dubai, paris, lima, added];
 
-var addStores = document.getElementById('add-stores');
+var cities = [seattle, tokyo, dubai, paris, lima];
+
+var addStores = document.getElementById('addStores');
 
 function getNewStores(event) {
     event.preventDefault();
+
+
+    var name = event.target.name.value;
+    var min = event.target.min.value;
+    var max = event.target.max.value;
+    var avg = event.target.avg.value;
+    new Stores(name, min, max, avg);
+
+
+    createTable();
+
 }
 
-// event.target.name = null;
-// event.target.min = null;
-// event.target.max = null;
-// event.target.avg = null;
-
-var name = event.target.name.value;
-var min = event.target.min.value;
-var max = event.target.max.value;
-var avg = event.target.avg.value;
-
-console.log(name);
-
-getNewStores();
 
 
 
@@ -117,25 +109,6 @@ function makeHeader() {
     table.appendChild(trHeader);
 
 }
-makeHeader();
-
-seattle.calcCookieHours();
-tokyo.calcCookieHours();
-dubai.calcCookieHours();
-paris.calcCookieHours();
-lima.calcCookieHours();
-added.calcCookieHours();
-
-seattle.render();
-tokyo.render();
-dubai.render();
-paris.render();
-lima.render();
-added.render();
-
-cities.calcCookieHours.render();
-
-
 
 function getTotal() {
     var trTotal = document.createElement('tr');
@@ -159,6 +132,21 @@ function getTotal() {
     trTotal.appendChild(tdMagicSquare);
 
 }
-getTotal();
+
+
+function createTable() {
+    table.innerHTML = '';
+    makeHeader();
+
+
+    for (var i = 0; i < cities.length; i++) {
+        cities[i].calcCookieHours();
+        cities[i].render();
+    }
+
+    getTotal();
+}
+
+createTable();
 
 addStores.addEventListener('submit', getNewStores);

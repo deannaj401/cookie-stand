@@ -89,13 +89,13 @@ a {
 }
 
 h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Cookie' cursive;
     color: green;
     text-align: center;
 }
 
 h2 {
-    color: rgb(8, 153, 44);
+    color: whitesmoke;
     text-align: center;
 }
 
@@ -112,14 +112,12 @@ h2 {
 div img {
     margin-left: auto;
     margin-right: auto;
-    height: "300px";
-    width: "200px;";
     float: left;
 }
 
 #addStores {
-    border: "3px" solid green;
-    padding: "20px";
+    border: 1px solid green;
+    padding: 20px;
 }
 
 input {
@@ -129,4 +127,8 @@ input {
 
 .newForm {
     float: left;
+}
+
+fieldset {
+    width: 10%;
 }
