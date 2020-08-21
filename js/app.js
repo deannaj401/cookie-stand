@@ -76,9 +76,9 @@ function getNewStores(event) {
 
 
     var name = event.target.name.value;
-    var min = event.target.min.value;
-    var max = event.target.max.value;
-    var avg = event.target.avg.value;
+    var min = parseInt(event.target.min.value);
+    var max = parseInt(event.target.max.value);
+    var avg = parseInt(event.target.avg.value);
     new Stores(name, min, max, avg);
 
 
@@ -92,7 +92,7 @@ function getNewStores(event) {
 function makeHeader() {
     var trHeader = document.createElement('tr');
     var tdHeader = document.createElement('td');
-    tdHeader.textContent = '';
+    tdHeader.textContent = 'Avg Hourly Cookie Sales per store';
 
     trHeader.appendChild(tdHeader);
     for (var i = 0; i < dailyHours.length; i++) {
