@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Fredoka+One&display=swap');
 body {
     background-color: salmon;
     align-items: center;
@@ -20,10 +21,9 @@ header {
 }
 
 tr {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
-    border: 3px solid green;
-    color: green;
+    font-family: Georgia, 'Times New Roman', Times, serif text-align: center;
+    border: 3px solid blue;
+    color: blue;
     background-color: ivory;
 }
 
@@ -32,7 +32,8 @@ td {
     height: 50px;
     vertical-align: center;
     border: 3px solid green;
-    color: green;
+    text-align: center;
+    color: salmon;
     background-color: ivory;
 }
 
@@ -89,7 +90,7 @@ a {
 }
 
 h1 {
-    font-family: 'Cookie' cursive;
+    font-family: 'Fredoka One', cursive;
     color: green;
     text-align: center;
 }
@@ -131,4 +132,46 @@ input {
 
 fieldset {
     width: 10%;
+}
+
+label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: green;
+    font-size: large;
+    text-align: center;
+}
+
+legend {
+    font-family: cursive;
+    font-size: x-large;
+    color: green;
+}
+
+button {
+    align-items: center;
+    padding: 20px;
+    border: none;
+    background-color: #3F51B5;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 100%;
+}
+
+input[type=text] {
+    padding: 10px;
+    margin: 10px 0;
+}
+
+input,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    color: green
+}
+
+hr {
+    height: 15px;
+    background: url(img/hr-img.png);
+    background-repeat: repeat;
 }
